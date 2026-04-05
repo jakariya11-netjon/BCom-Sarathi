@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MOS Units - ExamBoost</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #fffbfc;
+            --grad-marketing: linear-gradient(135deg, #e91e63, #ff6090);
+            --line-color: #fce4ec;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Google Sans', sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Android Navigation Bar */
+        .top-nav {
+            width: 100%;
+            max-width: 450px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #1a1c1e;
+            transition: background 0.2s;
+        }
+
+        .back-btn:active {
+            background: #fce4ec;
+        }
+
+        header {
+            width: 100%;
+            max-width: 450px;
+            padding: 10px 24px 20px 24px;
+            text-align: left;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #880e4f;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            margin: 4px 0 0 0;
+            font-size: 15px;
+            color: #43474e;
+        }
+
+        .divider-section {
+            width: 100%;
+            max-width: 450px;
+            padding: 10px 24px 25px 24px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .divider-section span {
+            font-size: 13px;
+            font-weight: 700;
+            color: #e91e63;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            white-space: nowrap;
+        }
+
+        .line {
+            flex: 1;
+            height: 1px;
+            background-color: #f8bbd0;
+        }
+
+        .button-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 0 16px;
+        }
+
+        /* Unit Row Style */
+        .unit-btn {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 12px;
+            border-radius: 24px;
+            text-decoration: none;
+            color: #1a1c1e;
+            background: white;
+            border: 1px solid #fce4ec;
+            box-shadow: 0 4px 6px rgba(233, 30, 99, 0.05);
+            transition: transform 0.1s;
+        }
+
+        .unit-num {
+            width: 44px;
+            height: 44px;
+            background: var(--grad-marketing);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            margin-right: 16px;
+        }
+
+        .unit-info {
+            flex: 1;
+        }
+
+        .unit-info h2 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1c1e;
+        }
+
+        .unit-info p {
+            margin: 2px 0 0 0;
+            font-size: 13px;
+            color: #880e4f;
+            opacity: 0.7;
+        }
+
+        .unit-btn:active {
+            transform: scale(0.97);
+            background-color: #fff5f8;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px 0;
+            color: #880e4f;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: center;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <a href="marketing.html" class="back-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </a>
+    </nav>
+
+    <header>
+        <h1>Marketing of Services</h1>
+        <p>BCom 6th Semester Study Units</p>
+    </header>
+
+    <div class="divider-section">
+        <span>Select Unit</span>
+        <div class="line"></div>
+    </div>
+
+    <main class="button-container">
+
+        <a href="MOS-unit1.html" class="unit-btn">
+            <div class="unit-num">1</div>
+            <div class="unit-info">
+                <h2>Basics of Services</h2>
+                <p>Concepts and Characteristics</p>
+            </div>
+        </a>
+
+        <a href="MOS-unit2.html" class="unit-btn">
+            <div class="unit-num">2</div>
+            <div class="unit-info">
+                <h2>Service Marketing Mix</h2>
+                <p>The 7 Ps of Services</p>
+            </div>
+        </a>
+
+        <a href="MOS-unit3.html" class="unit-btn">
+            <div class="unit-num">3</div>
+            <div class="unit-info">
+                <h2>Consumer Behaviour</h2>
+                <p>Customer Expectations & Perceptions</p>
+            </div>
+        </a>
+
+        <a href="MOS-unit4.html" class="unit-btn">
+            <div class="unit-num">4</div>
+            <div class="unit-info">
+                <h2>Service Sector</h2>
+                <p>Banking, Insurance & Tourism</p>
+            </div>
+        </a>
+
+    </main>
+
+    <footer>
+        © 2026 EXAMBOOST | MADE BY JAKARIYA
+    </footer>
+
+</body>
+
+</html>
