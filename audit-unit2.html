@@ -66,40 +66,142 @@
         }
     </style>
     <style>
-.chatgpt-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: #10a37f;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 999;
-    font-family: Arial, sans-serif;
-    line-height: 1.2;
-}
+        :root {
+            --accent-glow: rgba(255, 255, 255, 0.2);
+        }
 
-.chatgpt-float span {
-    display: block;
-}
+        /* Center Button */
+        .center-btn {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
 
-.chatgpt-float:active {
-    transform: scale(0.9);
-}
-</style>
+        /* Small Buttons */
+        .circle {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            cursor: pointer;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0);
+            transition: all 0.4s ease;
+        }
 
-<a href="https://chat.openai.com/" target="_blank" class="chatgpt-float">
-    <span>Chat<br>GPT</span>
-</a>
+        /* Active */
+        .circle.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Positions */
+        .chatgpt.active {
+            transform: translate(-110px, -60px) scale(1);
+            background: #10a37f;
+        }
+
+        .gemini.active {
+            transform: translate(-60px, -120px) scale(1);
+            background: #4285F4;
+        }
+
+        .blackbox.active {
+            transform: translate(0px, -130px) scale(1);
+            background: #000;
+        }
+
+        /* Hover */
+        .circle:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* Mobile Fix */
+        @media (max-width: 600px) {
+            .center-btn {
+                width: 65px;
+                height: 65px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 12px;
+            }
+
+            .circle {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>AI Dynamic Menu</h2>
+
+    <div class="center-btn" onclick="toggleMenu()" id="mainBtn">Ask me</div>
+
+    <div class="circle chatgpt" onclick="openChatGPT()">ChatGPT</div>
+    <div class="circle gemini" onclick="openGemini()">Gemini</div>
+    <div class="circle blackbox" onclick="openBlackbox()">Blackbox</div>
+
+    <script>
+        let open = false;
+
+        function toggleMenu() {
+            let items = document.querySelectorAll(".circle");
+            let mainBtn = document.getElementById("mainBtn");
+
+            open = !open;
+
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.toggle("active");
+                }, index * 70);
+            });
+
+            mainBtn.style.transform = open ? "rotate(45deg)" : "rotate(0deg)";
+        }
+
+        function openChatGPT() {
+            window.open("https://chat.openai.com/", "_blank");
+        }
+
+        function openGemini() {
+            window.open("https://gemini.google.com/", "_blank");
+        }
+
+        function openBlackbox() {
+            window.open("https://www.blackbox.ai/", "_blank");
+        }
+    </script>
+
+</body>
 </head>
 
 <body>
